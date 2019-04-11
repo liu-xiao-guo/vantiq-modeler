@@ -1,0 +1,19 @@
+[ {
+  "id" : 1,
+  "name" : "zhang san",
+  "location" : {
+    "type" : "Point",
+    "coordinates" : [ 116.221619, 40.028666 ]
+  },
+  "number" : "111111111111",
+  "username" : "xliu"
+}, {
+  "id" : 2,
+  "name" : "li si",
+  "location" : {
+    "type" : "Point",
+    "coordinates" : [ 116.472931, 40.004213 ]
+  },
+  "number" : "22222222222",
+  "username" : "xliu"
+} ]

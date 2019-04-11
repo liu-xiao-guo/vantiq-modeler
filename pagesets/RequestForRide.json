@@ -1,0 +1,228 @@
+{
+  "ars_properties" : {
+    "tags" : [ "#launchable" ]
+  },
+  "controllers" : {
+    "client" : { },
+    "dataStream" : { },
+    "page" : {
+      "Start" : {
+        "widgets" : { }
+      }
+    }
+  },
+  "isLaunchable" : true,
+  "models" : {
+    "dataObjects" : {
+      "__GLOBAL__" : {
+        "properties" : { }
+      },
+      "__PARAMETERS__" : {
+        "properties" : { }
+      }
+    },
+    "dataStreams" : [ ]
+  },
+  "name" : "RequestForRide",
+  "options" : {
+    "badgeCount" : 0,
+    "description" : "",
+    "showGridWhileEditing" : false,
+    "theme" : {
+      "backgroundColor" : "#ffffff",
+      "borderColor" : "#d3d6db",
+      "cardAccentColor" : "#ffffff",
+      "cardColor" : "#3c424d",
+      "foregroundColor" : "#566076",
+      "label" : "Light",
+      "name" : "light",
+      "titleBarColor" : "#f0f2f8",
+      "v" : 2
+    },
+    "v" : 3
+  },
+  "targetDevice" : "mobile",
+  "userList" : [ ],
+  "views" : {
+    "Start" : {
+      "bodyChildren" : [ {
+        "CSSClass" : "vantiqLabel",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderRadius" : 4,
+        "borderWidth" : 0,
+        "h" : 40,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 10,
+        "innerMargin" : 0,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "label" : "Number:",
+        "labelAlign" : "left",
+        "labelColor" : "default",
+        "labelFontSize" : 16,
+        "labelStyle" : "bold",
+        "name" : "Label1",
+        "type" : "PIText",
+        "v" : 14,
+        "vertGravity" : 4,
+        "vertMargin" : 10,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 5
+      }, {
+        "CSSClass" : "vantiqInputString",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "binding" : "page.data.PassengerInfo.number",
+        "borderColor" : "Default",
+        "borderRadius" : 4,
+        "borderWidth" : 0,
+        "default" : "1111111111",
+        "h" : 54,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 10,
+        "innerMargin" : 0,
+        "isDraggable" : true,
+        "isPassword" : false,
+        "isSelectable" : true,
+        "label" : "",
+        "labelAlign" : "left",
+        "labelColor" : "default",
+        "labelFontSize" : 16,
+        "labelStyle" : "bold",
+        "name" : "InputString1",
+        "optional" : true,
+        "placeholder" : "",
+        "type" : "PIInputString",
+        "v" : 14,
+        "vertGravity" : 4,
+        "vertMargin" : 10,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 50
+      }, {
+        "CSSClass" : "vantiqLabel",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderRadius" : 4,
+        "borderWidth" : 0,
+        "h" : 40,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 10,
+        "innerMargin" : 0,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "label" : "Destination:",
+        "labelAlign" : "left",
+        "labelColor" : "default",
+        "labelFontSize" : 16,
+        "labelStyle" : "bold",
+        "name" : "Label2",
+        "type" : "PIText",
+        "v" : 14,
+        "vertGravity" : 4,
+        "vertMargin" : 10,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 109
+      }, {
+        "CSSClass" : "vantiqInputString",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "binding" : "page.data.PassengerInfo.destination",
+        "borderColor" : "Default",
+        "borderRadius" : 4,
+        "borderWidth" : 0,
+        "default" : "天安门",
+        "h" : 54,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 10,
+        "innerMargin" : 0,
+        "isDraggable" : true,
+        "isPassword" : false,
+        "isSelectable" : true,
+        "label" : "",
+        "labelAlign" : "left",
+        "labelColor" : "default",
+        "labelFontSize" : 16,
+        "labelStyle" : "bold",
+        "name" : "InputString2",
+        "optional" : true,
+        "placeholder" : "",
+        "type" : "PIInputString",
+        "v" : 14,
+        "vertGravity" : 4,
+        "vertMargin" : 10,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 154
+      } ],
+      "data" : {
+        "properties" : {
+          "PassengerInfo" : {
+            "defaultLabel" : "PassengerInfo",
+            "type" : "TypedObject",
+            "typedObject" : {
+              "properties" : {
+                "destination" : {
+                  "defaultLabel" : "destination",
+                  "type" : "String"
+                }
+              }
+            }
+          }
+        }
+      },
+      "fields" : [ ],
+      "footerChildren" : [ {
+        "CSSClass" : "vantiqFooterButton",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderRadius" : 4,
+        "borderWidth" : 0,
+        "buttonBackgroundColor" : "platform",
+        "buttonLabel" : "Submit",
+        "buttonLabelColor" : "platform",
+        "buttonLabelSize" : 14,
+        "buttonLabelStyle" : "bold",
+        "h" : 46,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 10,
+        "innerMargin" : 0,
+        "isArtificial" : false,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "label" : "",
+        "labelAlign" : "left",
+        "labelColor" : "default",
+        "labelFontSize" : 16,
+        "labelStyle" : "bold",
+        "name" : "FooterButton2",
+        "type" : "PIFooterButton",
+        "v" : 14,
+        "value" : 100,
+        "vertGravity" : 4,
+        "vertMargin" : 10,
+        "w" : 87,
+        "widthPolicy" : 0,
+        "x" : 156.5,
+        "y" : 5
+      } ],
+      "layoutType" : "mobile",
+      "responseTopic" : "/my/response/topic"
+    }
+  }
+}

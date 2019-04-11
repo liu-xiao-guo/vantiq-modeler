@@ -1,0 +1,121 @@
+{
+  "contents" : {
+    "groups" : [ {
+      "members" : [ "97d10040-4586-4796-b590-e9c83da5d617", "a16a04b8-1b48-4e5d-b07e-6f34ee6aa299", "81b88c6c-bcb7-43d6-9821-401f1bec323a", "22242526-74e3-45a7-8485-36f691162b0e", "7c14f858-1968-4003-868f-0c7c164fd51e", "194753a6-c3d0-4159-84a1-65d52a2dc7b4", "a1bfd865-f7f5-4ed7-89d3-4041946e4e97", "f25faaf2-c188-461f-96ba-4102881433c6" ],
+      "name" : "kuaiche",
+      "selected" : true
+    } ],
+    "links" : [ {
+      "from" : "97d10040-4586-4796-b590-e9c83da5d617",
+      "to" : "a16a04b8-1b48-4e5d-b07e-6f34ee6aa299"
+    }, {
+      "from" : "a16a04b8-1b48-4e5d-b07e-6f34ee6aa299",
+      "to" : "81b88c6c-bcb7-43d6-9821-401f1bec323a"
+    }, {
+      "from" : "81b88c6c-bcb7-43d6-9821-401f1bec323a",
+      "to" : "22242526-74e3-45a7-8485-36f691162b0e"
+    }, {
+      "from" : "f25faaf2-c188-461f-96ba-4102881433c6",
+      "to" : "194753a6-c3d0-4159-84a1-65d52a2dc7b4"
+    }, {
+      "from" : "194753a6-c3d0-4159-84a1-65d52a2dc7b4",
+      "to" : "7c14f858-1968-4003-868f-0c7c164fd51e"
+    }, {
+      "from" : "7c14f858-1968-4003-868f-0c7c164fd51e",
+      "to" : "a1bfd865-f7f5-4ed7-89d3-4041946e4e97"
+    }, {
+      "from" : "22242526-74e3-45a7-8485-36f691162b0e",
+      "to" : "f25faaf2-c188-461f-96ba-4102881433c6"
+    } ],
+    "objects" : [ {
+      "clientName" : "RequestForRide",
+      "h" : 100,
+      "label" : "RequestForRide",
+      "type" : 26,
+      "uuid" : "97d10040-4586-4796-b590-e9c83da5d617",
+      "w" : 119.26396942138672,
+      "x" : -9884.923557281494,
+      "y" : -9835.222229003906
+    }, {
+      "h" : 100,
+      "label" : "RequestReceived",
+      "type" : 24,
+      "uuid" : "a16a04b8-1b48-4e5d-b07e-6f34ee6aa299",
+      "w" : 127.50395965576172,
+      "x" : -9707.803562164307,
+      "y" : -9830.222229003906
+    }, {
+      "h" : 100,
+      "label" : "SaveRequest",
+      "reactionTask" : "SaveToType",
+      "reactionType" : 1,
+      "type" : 25,
+      "uuid" : "81b88c6c-bcb7-43d6-9821-401f1bec323a",
+      "w" : 100,
+      "x" : -9531.555541992188,
+      "y" : -9833.222229003906
+    }, {
+      "h" : 100,
+      "label" : "FindNearbyDrivers",
+      "reactionTask" : "Recommendation",
+      "reactionType" : 2,
+      "type" : 25,
+      "uuid" : "22242526-74e3-45a7-8485-36f691162b0e",
+      "w" : 168.2079315185547,
+      "x" : -9316.45157623291,
+      "y" : -9843.222229003906
+    }, {
+      "h" : 100,
+      "label" : "BroadcastRequests",
+      "reactionTask" : "Notification",
+      "reactionType" : 2,
+      "type" : 25,
+      "uuid" : "f25faaf2-c188-461f-96ba-4102881433c6",
+      "w" : 141.61593627929688,
+      "x" : -9488.747573852539,
+      "y" : -9644.222229003906
+    }, {
+      "h" : 100,
+      "label" : "AssignDriver",
+      "reactionTask" : "Assignment",
+      "reactionType" : 2,
+      "type" : 25,
+      "uuid" : "194753a6-c3d0-4159-84a1-65d52a2dc7b4",
+      "w" : 100,
+      "x" : -9698.555541992188,
+      "y" : -9631.222229003906
+    }, {
+      "h" : 100,
+      "label" : "SendDetailPassagerInfo",
+      "reactionTask" : "Notification",
+      "reactionType" : 2,
+      "type" : 25,
+      "uuid" : "7c14f858-1968-4003-868f-0c7c164fd51e",
+      "w" : 173.31190490722656,
+      "x" : -9866.899589538574,
+      "y" : -9635.222229003906
+    }, {
+      "h" : 100,
+      "label" : "Finished",
+      "reactionTask" : "Execute",
+      "reactionType" : 2,
+      "type" : 25,
+      "uuid" : "a1bfd865-f7f5-4ed7-89d3-4041946e4e97",
+      "w" : 100,
+      "x" : -9893.555541992188,
+      "y" : -9509.222229003906
+    } ],
+    "prefs" : {
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 0,
+        "scale" : 0.9999999999999998,
+        "translate" : [ 10080.27812935562, 9960.004323604146 ]
+      },
+      "showGroups" : true
+    },
+    "timestamp" : "2019-03-26T08:40:38.089Z"
+  },
+  "description" : "No description given",
+  "journals" : [ ],
+  "name" : "kuaiche"
+}

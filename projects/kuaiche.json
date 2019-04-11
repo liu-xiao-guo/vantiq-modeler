@@ -1,0 +1,186 @@
+{
+  "links" : [ {
+    "source" : "client/RequestForRide",
+    "target" : "topic//my/response/topic"
+  }, {
+    "source" : "type/Passenger",
+    "target" : "app/kuaiche"
+  }, {
+    "source" : "topic//my/response/topic",
+    "target" : "app/kuaiche"
+  }, {
+    "source" : "type/drivers",
+    "target" : "collaborationtype/FindNearbyDrivers"
+  }, {
+    "source" : "type/Passenger",
+    "target" : "collaborationtype/FindNearbyDrivers"
+  }, {
+    "source" : "collaborationtype/FindNearbyDrivers",
+    "target" : "procedure/Recommend.nearbyRecommendations"
+  } ],
+  "name" : "kuaiche",
+  "options" : {
+    "description" : "",
+    "filterBitArray" : "ffffffffffffffffffffffffffffffff",
+    "isModeloProject" : true,
+    "layoutStyle" : "custom",
+    "showGrid" : true,
+    "v" : 2
+  },
+  "resources" : [ {
+    "label" : "/my/response/topic",
+    "name" : "/my/response/topic",
+    "node" : {
+      "x" : 246.57517053631986,
+      "y" : 131.0763531653028
+    },
+    "type" : 10
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "Recommend.nearbyRecommendations", "CollaborationUtils.closeCollaboration" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in" ],
+      "types" : [ "drivers", "Passenger", "drivers" ]
+    },
+    "name" : "FindNearbyDrivers",
+    "node" : {
+      "x" : 179.600260821748,
+      "y" : 206.81409734036922
+    },
+    "timestamp" : "2019-03-28T02:00:44.454Z",
+    "type" : 11
+  }, {
+    "name" : "Passenger",
+    "node" : {
+      "x" : 337.26398217509933,
+      "y" : 149.0565411525475
+    },
+    "timestamp" : "2019-03-26T13:06:34.758Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out", "out", "out" ],
+      "procedures" : [ "exception", "pattern.keySet", "matchDirectives.keySet", "geoProps.push", "geoDistance", "recommendations.sort" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "types" ]
+    },
+    "name" : "Recommend.nearbyRecommendations",
+    "node" : {
+      "x" : 181.2006985687384,
+      "y" : 49.74166823720907
+    },
+    "timestamp" : "2018-01-11T21:00:27.611Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/my/response/topic" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "RequestForRide",
+    "name" : "RequestForRide",
+    "node" : {
+      "x" : 349.38698533609005,
+      "y" : 233.8881679650751
+    },
+    "timestamp" : "2019-03-26T12:41:27.741Z",
+    "type" : 15
+  }, {
+    "name" : "drivers",
+    "node" : {
+      "x" : 262.4808058744122,
+      "y" : 342.5899795324598
+    },
+    "timestamp" : "2019-03-26T08:48:34.003Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ "out" ],
+      "collaborations" : [ "StartFindNearbyDrivers" ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ "in" ],
+      "topics" : [ "/my/response/topic" ],
+      "typeHash" : [ "in" ],
+      "types" : [ "Passenger" ]
+    },
+    "name" : "kuaiche",
+    "node" : {
+      "x" : 236.96628421703343,
+      "y" : 275.93665347265454
+    },
+    "timestamp" : "2019-03-26T13:02:48.244Z",
+    "type" : 12
+  } ],
+  "tools" : [ {
+    "isPinned" : false,
+    "name" : "Project Resource Graph",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 80,
+      "y" : 40
+    },
+    "toolOptions" : {
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 0,
+        "scale" : 1,
+        "translate" : [ 12.852081367227925, -24.52469720254453 ]
+      }
+    },
+    "type" : 1
+  }, {
+    "isPinned" : false,
+    "name" : "kuaiche",
+    "pane" : {
+      "h" : 500,
+      "w" : 800,
+      "x" : 700,
+      "y" : 40
+    },
+    "resourceKey" : "app/kuaiche",
+    "type" : 15
+  } ],
+  "type" : "dev",
+  "views" : [ {
+    "name" : "Main",
+    "projectToolKeys" : [ "graph/Project Resource Graph", "app/kuaiche" ]
+  } ]
+}

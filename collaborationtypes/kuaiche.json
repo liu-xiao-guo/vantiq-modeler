@@ -1,0 +1,73 @@
+{
+  "active" : true,
+  "appType" : true,
+  "assembly" : {
+    "RequestForRide" : {
+      "configuration" : {
+        "childStreams" : [ "TransformStream" ],
+        "condition" : null,
+        "inboundResource" : "topics",
+        "inboundResourceId" : "/my/response/topic",
+        "op" : null,
+        "outboundResource" : null,
+        "outboundResourceConfig" : null,
+        "outboundResourceId" : null,
+        "schema" : null,
+        "upsert" : null
+      },
+      "description" : null,
+      "pattern" : "EventStream"
+    },
+    "SaveRequest" : {
+      "configuration" : {
+        "childStreams" : [ "StartFindNearbyDrivers" ],
+        "type" : "Passenger",
+        "upsert" : false
+      },
+      "description" : null,
+      "pattern" : "SaveToType"
+    },
+    "StartFindNearbyDrivers" : {
+      "configuration" : {
+        "collaboration" : "FindNearbyDrivers",
+        "entityConstraint" : "_id==event._id",
+        "entityType" : "Passenger"
+      },
+      "description" : "Used to bridge between this App and the Collaboration Type below. The default Configuration parameters above are usually sufficient but may be modified to limit when the Collaboration Type is triggered.",
+      "pattern" : "StartCollaboration"
+    },
+    "TransformStream" : {
+      "configuration" : {
+        "childStreams" : [ "SaveRequest" ],
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "schema" : null,
+        "transformation" : {
+          "destination" : {
+            "expression" : "event.values.InputString2",
+            "type" : "expression"
+          },
+          "location" : {
+            "expression" : "{\"type\":\"Point\", \"coordinates\":  [event.arsInfo.responseLocation.longitude,event.arsInfo.responseLocation.latitude]}",
+            "type" : "expression"
+          },
+          "number" : {
+            "expression" : "event.values.InputString1",
+            "type" : "expression"
+          }
+        },
+        "upsert" : false
+      },
+      "description" : "Used to transform data from the EventStream into usable properties. Please review the Configuration parameters above and edit the transformations as needed before adding tasks below this task.",
+      "pattern" : "Transformation"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "kuaiche"
+}

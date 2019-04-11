@@ -1,0 +1,196 @@
+{
+  "links" : [ {
+    "source" : "client/RequestForRide",
+    "target" : "topic//my/response/topic"
+  }, {
+    "source" : "client/NotifyAllDrivers",
+    "target" : "topic//my/response/topic"
+  }, {
+    "source" : "client/SendDetailedRequest",
+    "target" : "topic//my/response/topic"
+  }, {
+    "source" : "client/RequestForRide",
+    "target" : "appmodel/kuaiche"
+  } ],
+  "name" : "modeler",
+  "options" : {
+    "description" : "",
+    "filterBitArray" : "ffffffffffffffffffffffffffffffff",
+    "isModeloProject" : true,
+    "layoutStyle" : "custom",
+    "showGrid" : true,
+    "v" : 2
+  },
+  "resources" : [ {
+    "label" : "/my/response/topic",
+    "name" : "/my/response/topic",
+    "node" : {
+      "x" : 225.80545203635964,
+      "y" : 229.38478777607153
+    },
+    "type" : 10
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/my/response/topic" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "NotifyAllDrivers",
+    "name" : "NotifyAllDrivers",
+    "node" : {
+      "x" : 188.23446199163504,
+      "y" : 85.93999986957427
+    },
+    "timestamp" : "2019-03-26T13:21:27.634Z",
+    "type" : 15
+  }, {
+    "label" : "Passenger",
+    "name" : "Passenger",
+    "node" : {
+      "x" : 415.15932479394036,
+      "y" : 286.07860523561
+    },
+    "timestamp" : "2019-03-26T13:06:34.758Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/my/response/topic" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "RequestForRide",
+    "name" : "RequestForRide",
+    "node" : {
+      "x" : 314.20067899491215,
+      "y" : 98.21470713262639
+    },
+    "timestamp" : "2019-03-26T12:41:27.741Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/my/response/topic" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "SendDetailedRequest",
+    "name" : "SendDetailedRequest",
+    "node" : {
+      "x" : 292.80394868564645,
+      "y" : 43.92739477265687
+    },
+    "timestamp" : "2019-03-27T05:59:19.360Z",
+    "type" : 15
+  }, {
+    "label" : "drivers",
+    "name" : "drivers",
+    "node" : {
+      "x" : 473.62292743063085,
+      "y" : 36.69492227566039
+    },
+    "timestamp" : "2019-03-26T08:48:34.003Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ "in" ],
+      "pagesets" : [ "RequestForRide" ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "kuaiche",
+    "name" : "kuaiche",
+    "node" : {
+      "x" : 297.97726300398745,
+      "y" : 182.48607549740976
+    },
+    "timestamp" : "2019-03-26T08:40:37.903Z",
+    "type" : 45
+  } ],
+  "tools" : [ {
+    "isPinned" : false,
+    "name" : "Project Resource Graph",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 20,
+      "y" : 20
+    },
+    "toolOptions" : {
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 0,
+        "scale" : 1,
+        "translate" : [ 0, 0 ]
+      }
+    },
+    "type" : 1
+  }, {
+    "isPinned" : false,
+    "name" : "drivers",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 410,
+      "y" : 1040
+    },
+    "resourceKey" : "type/drivers",
+    "type" : 6
+  }, {
+    "isPinned" : false,
+    "name" : "SendDetailedRequest",
+    "pane" : {
+      "h" : 700,
+      "w" : 1130,
+      "x" : 0,
+      "y" : 550.0000305175781
+    },
+    "resourceKey" : "client/SendDetailedRequest",
+    "type" : 63
+  } ],
+  "type" : "dev",
+  "views" : [ {
+    "name" : "Main",
+    "projectToolKeys" : [ "graph/Project Resource Graph", "subtypeeditor/drivers", "client/SendDetailedRequest" ]
+  } ]
+}

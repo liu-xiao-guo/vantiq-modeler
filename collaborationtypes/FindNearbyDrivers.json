@@ -1,0 +1,227 @@
+{
+  "active" : true,
+  "appType" : false,
+  "assembly" : {
+    "AssignDriver" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "AssignEntityDriver",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "name" : "value",
+            "type" : "expression",
+            "value" : "collaboration.results.FindNearbyDrivers.recommendations[0]"
+          } ],
+          "type" : "activity"
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "roleName" : "driver",
+        "roleType" : "collaborator"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "driver", "driverLocation", "drivers", "Passenger" ],
+      "pattern" : "Assignment"
+    },
+    "AssignEntityDriver" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "SendDetailedNotification",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "name" : "users",
+            "type" : "expression",
+            "value" : "driver"
+          } ],
+          "type" : "activity"
+        } ],
+        "condition" : null,
+        "description" : null,
+        "name" : null
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "roleName" : "drivers",
+        "roleType" : "entity"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "driver", "driverLocation", "drivers", "Passenger" ],
+      "pattern" : "Assignment"
+    },
+    "BroadcastRequests" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "body" : "Passenger is located at ${Passenger.location}",
+        "clientName" : "NotifyAllDrivers",
+        "firstResponseBehaviors" : [ ],
+        "pushSourceName" : null,
+        "responseBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "AssignDriver",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "value",
+              "type" : "expression",
+              "value" : "event.username"
+            } ],
+            "type" : "activity"
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "response"
+        } ],
+        "title" : "New passenger request"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "driver", "driverLocation", "drivers", "Passenger" ],
+      "pattern" : "Notification"
+    },
+    "FindNearbyDrivers" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "BroadcastRequests",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "name" : "users",
+            "type" : "expression",
+            "value" : "collaboration.results.FindNearbyDrivers.recommendations[0].username"
+          } ],
+          "type" : "activity"
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "candidateType" : "drivers",
+        "matchType" : null,
+        "recommendationProcedure" : "Recommend.nearbyRecommendations"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "driver", "driverLocation", "drivers", "Passenger" ],
+      "pattern" : "Recommendation"
+    },
+    "Finished" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "serviceName" : "CollaborationUtils.closeCollaboration"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "driver", "driverLocation", "drivers", "Passenger" ],
+      "pattern" : "Execute"
+    },
+    "Initiate" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "FindNearbyDrivers",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "name" : "target",
+            "type" : "expression",
+            "value" : "{location:Passenger.location}"
+          } ],
+          "type" : "activity"
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "entityRole" : "Passenger",
+        "initialTrigger" : "WHEN INSERT OCCURS ON ArsSituation AS situation WHERE situation.name == \"FindNearbyDrivers\""
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "driver", "driverLocation", "drivers", "Passenger" ],
+      "pattern" : "InitiateCollaboration"
+    },
+    "SendDetailedNotification" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "body" : "Passenger is located at ${Passenger.location}",
+        "clientName" : "SendDetailedRequest",
+        "firstResponseBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "Finished",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "parameters",
+              "type" : "expression",
+              "value" : "[collaboration.id]"
+            } ],
+            "type" : "activity"
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "firstResponse"
+        } ],
+        "pushSourceName" : null,
+        "responseBehaviors" : [ ],
+        "title" : "New passenger request"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "driver", "driverLocation", "drivers", "Passenger" ],
+      "pattern" : "Notification"
+    }
+  },
+  "collaboratorRoles" : [ "driver", "driverLocation" ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "entityRoles" : [ {
+    "name" : "drivers",
+    "type" : "drivers"
+  }, {
+    "name" : "Passenger",
+    "type" : "Passenger"
+  } ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "FindNearbyDrivers"
+}

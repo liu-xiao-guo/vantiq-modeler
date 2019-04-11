@@ -1,0 +1,146 @@
+{
+  "controllers" : {
+    "client" : { },
+    "dataStream" : { },
+    "page" : {
+      "Start" : {
+        "onStart" : "var context = client.getCollaborationContext();\n\nclient.data.locationStr = JSON.stringify(context.Passenger.location);\n\nclient.getWidget(\"location\").text = \"Passenger location is at: \" + client.data.locationStr; ",
+        "widgets" : { }
+      }
+    }
+  },
+  "isLaunchable" : false,
+  "models" : {
+    "dataObjects" : {
+      "__GLOBAL__" : {
+        "properties" : {
+          "locationStr" : {
+            "defaultLabel" : "locationStr",
+            "type" : "String"
+          }
+        }
+      },
+      "__PARAMETERS__" : {
+        "properties" : { }
+      }
+    },
+    "dataStreams" : [ ]
+  },
+  "name" : "NotifyAllDrivers",
+  "options" : {
+    "badgeCount" : 0,
+    "description" : "",
+    "showGridWhileEditing" : false,
+    "theme" : {
+      "backgroundColor" : "#ffffff",
+      "borderColor" : "#d3d6db",
+      "cardAccentColor" : "#ffffff",
+      "cardColor" : "#3c424d",
+      "foregroundColor" : "#566076",
+      "label" : "Light",
+      "name" : "light",
+      "titleBarColor" : "#f0f2f8",
+      "v" : 2
+    },
+    "v" : 3
+  },
+  "targetDevice" : "mobile",
+  "userList" : [ ],
+  "views" : {
+    "Start" : {
+      "bodyChildren" : [ {
+        "CSSClass" : "vantiqStaticText",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderRadius" : 4,
+        "borderWidth" : 0,
+        "fontFace" : "inherit",
+        "fontSize" : 20,
+        "fontStyle" : "normal",
+        "fontWeight" : "normal",
+        "h" : 25,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "name" : "location",
+        "text" : "Passenger location is ${client.data.locationStr}",
+        "type" : "TextLabel",
+        "v" : 14,
+        "vertGravity" : 4,
+        "w" : 386,
+        "widthPolicy" : 0,
+        "x" : 5,
+        "y" : 5
+      }, {
+        "CSSClass" : "vantiqStaticText",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderRadius" : 4,
+        "borderWidth" : 0,
+        "fontFace" : "inherit",
+        "fontSize" : 20,
+        "fontStyle" : "normal",
+        "fontWeight" : "normal",
+        "h" : 25,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "name" : "StaticText36",
+        "text" : "Passenger's number is: ${Passenger.number}",
+        "type" : "TextLabel",
+        "v" : 14,
+        "vertGravity" : 4,
+        "w" : 372,
+        "widthPolicy" : 0,
+        "x" : 5,
+        "y" : 35
+      } ],
+      "data" : {
+        "properties" : { }
+      },
+      "fields" : [ ],
+      "footerChildren" : [ {
+        "CSSClass" : "vantiqFooterButton",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderRadius" : 4,
+        "borderWidth" : 0,
+        "buttonBackgroundColor" : "platform",
+        "buttonLabel" : "OK",
+        "buttonLabelColor" : "platform",
+        "buttonLabelSize" : 14,
+        "buttonLabelStyle" : "bold",
+        "h" : 46,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 10,
+        "innerMargin" : 0,
+        "isArtificial" : false,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "label" : "",
+        "labelAlign" : "left",
+        "labelColor" : "default",
+        "labelFontSize" : 16,
+        "labelStyle" : "bold",
+        "name" : "FooterButton7",
+        "type" : "PIFooterButton",
+        "v" : 14,
+        "value" : 100,
+        "vertGravity" : 4,
+        "vertMargin" : 10,
+        "w" : 60,
+        "widthPolicy" : 0,
+        "x" : 170,
+        "y" : 5
+      } ],
+      "layoutType" : "mobile",
+      "responseTopic" : "/my/response/topic"
+    }
+  }
+}

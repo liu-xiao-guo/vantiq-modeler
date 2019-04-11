@@ -1,0 +1,86 @@
+{
+  "controllers" : {
+    "client" : { },
+    "dataStream" : { },
+    "page" : {
+      "Start" : {
+        "widgets" : { }
+      }
+    }
+  },
+  "isLaunchable" : false,
+  "models" : {
+    "dataObjects" : {
+      "__GLOBAL__" : {
+        "properties" : { }
+      },
+      "__PARAMETERS__" : {
+        "properties" : { }
+      }
+    },
+    "dataStreams" : [ ]
+  },
+  "name" : "testclient",
+  "options" : {
+    "badgeCount" : 0,
+    "description" : "",
+    "showGridWhileEditing" : false,
+    "theme" : {
+      "backgroundColor" : "#ffffff",
+      "borderColor" : "#d3d6db",
+      "cardAccentColor" : "#ffffff",
+      "cardColor" : "#3c424d",
+      "foregroundColor" : "#566076",
+      "label" : "Light",
+      "name" : "light",
+      "titleBarColor" : "#f0f2f8",
+      "v" : 2
+    },
+    "v" : 3
+  },
+  "targetDevice" : "browser",
+  "views" : {
+    "Start" : {
+      "bodyChildren" : [ {
+        "CSSClass" : "vantiqInputString",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderRadius" : 4,
+        "borderWidth" : 0,
+        "default" : "111111111",
+        "h" : 54,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 10,
+        "innerMargin" : 0,
+        "isDraggable" : true,
+        "isPassword" : false,
+        "isSelectable" : true,
+        "label" : "",
+        "labelAlign" : "left",
+        "labelColor" : "default",
+        "labelFontSize" : 16,
+        "labelStyle" : "bold",
+        "name" : "InputString7",
+        "optional" : true,
+        "placeholder" : "",
+        "type" : "PIInputString",
+        "v" : 14,
+        "vertGravity" : 4,
+        "vertMargin" : 10,
+        "w" : 311,
+        "widthPolicy" : 1,
+        "x" : 188.6666717529297,
+        "y" : 65.4444580078125
+      } ],
+      "data" : {
+        "properties" : { }
+      },
+      "fields" : [ ],
+      "footerChildren" : [ ],
+      "layoutType" : "browser",
+      "responseTopic" : "/my/response/topic"
+    }
+  }
+}

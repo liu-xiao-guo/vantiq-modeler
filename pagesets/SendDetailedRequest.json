@@ -1,0 +1,199 @@
+{
+  "controllers" : {
+    "client" : { },
+    "dataStream" : { },
+    "page" : {
+      "Start" : {
+        "onStart" : "var http = new Http();\n\nhttp.setVantiqUrlForResource(\"system.collaborations\");\nhttp.setVantiqHeaders();\n\nvar id = client.getStateObject().collaborationId ;\n\nhttp.selectOne(id,null,function(response) {\n    var context = client.getCollaborationContext();\n    client.data.context = context; // for other display purpose\n\n    // var string = JSON.stringify(client.data.context);\n    // client.infoDialog(string, \"Context value\");\n\n    // Now lets display the data for the passenger\n    var passengerLoc = response.results.Initiate.event.location;\n\n    var map = client.getWidget(\"baidumap\").map;\n\n    // var loc = context.Passenger.location;\n    var point = new BMap.Point(passengerLoc.coordinates[0], passengerLoc.coordinates[1]);\n    map.centerAndZoom(point, 10);\n    map.enableScrollWheelZoom();\n    var marker = new BMap.Marker(point);\n    map.addOverlay(marker);\n\n    /*\n    var driverLocation = context.collaboration.results.FindNearbyDrivers.recommendations[0].location;\n    point = new BMap.Point(driverLocation.coordinates[0], driverLocation.coordinates[1]);\n    map.centerAndZoom(point, 10);\n    var marker = new BMap.Marker(point);\n    map.addOverlay(marker);\n    */\n\n    Binding.applyChanges();    \n},\n   function(errors) {\n    client.showHttpErrors(errors,\"Doing a select on a single collaboration\");\n});\n",
+        "widgets" : { }
+      }
+    }
+  },
+  "isLaunchable" : false,
+  "models" : {
+    "dataObjects" : {
+      "__GLOBAL__" : {
+        "properties" : {
+          "context" : {
+            "defaultLabel" : "context",
+            "type" : "Object"
+          }
+        }
+      },
+      "__PARAMETERS__" : {
+        "properties" : { }
+      }
+    },
+    "dataStreams" : [ ]
+  },
+  "name" : "SendDetailedRequest",
+  "options" : {
+    "badgeCount" : 0,
+    "description" : "",
+    "showGridWhileEditing" : false,
+    "theme" : {
+      "backgroundColor" : "#ffffff",
+      "borderColor" : "#d3d6db",
+      "cardAccentColor" : "#ffffff",
+      "cardColor" : "#3c424d",
+      "foregroundColor" : "#566076",
+      "label" : "Light",
+      "name" : "light",
+      "titleBarColor" : "#f0f2f8",
+      "v" : 2
+    },
+    "v" : 3
+  },
+  "targetDevice" : "mobile",
+  "userList" : [ ],
+  "views" : {
+    "Start" : {
+      "bodyChildren" : [ {
+        "CSSClass" : "vantiqStaticText",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderRadius" : 4,
+        "borderWidth" : 0,
+        "fontFace" : "inherit",
+        "fontSize" : 20,
+        "fontStyle" : "normal",
+        "fontWeight" : "normal",
+        "h" : 25,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "name" : "StaticText23",
+        "text" : "Passenger number is: ${Passenger.number}",
+        "type" : "TextLabel",
+        "v" : 14,
+        "vertGravity" : 4,
+        "w" : 358,
+        "widthPolicy" : 0,
+        "x" : 11,
+        "y" : 5
+      }, {
+        "_mapType" : "normal",
+        "_pinCenter" : true,
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderRadius" : 4,
+        "borderWidth" : 0,
+        "dataStreamGroupedByFiltersString" : "",
+        "dataStreamPropertyList" : [ ],
+        "dataStreamUUID" : "",
+        "dataType" : null,
+        "h" : 200,
+        "heightPolicy" : 1,
+        "horzGravity" : 4,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "name" : "baidumap",
+        "naturalKey" : null,
+        "operation" : "insert",
+        "propertyName" : null,
+        "type" : "BaiduMapWidget",
+        "v" : 14,
+        "vertGravity" : 4,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 35
+      }, {
+        "CSSClass" : "vantiqStaticText",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderRadius" : 4,
+        "borderWidth" : 0,
+        "fontFace" : "inherit",
+        "fontSize" : 20,
+        "fontStyle" : "normal",
+        "fontWeight" : "normal",
+        "h" : 25,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "name" : "StaticText109",
+        "text" : "driver: ${driver}",
+        "type" : "TextLabel",
+        "v" : 14,
+        "vertGravity" : 4,
+        "w" : 129,
+        "widthPolicy" : 0,
+        "x" : 125.5,
+        "y" : 240
+      }, {
+        "CSSClass" : "vantiqStaticText",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderRadius" : 4,
+        "borderWidth" : 0,
+        "fontFace" : "inherit",
+        "fontSize" : 20,
+        "fontStyle" : "normal",
+        "fontWeight" : "normal",
+        "h" : 25,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "name" : "StaticText113",
+        "text" : "driver name: ${drivers.name}",
+        "type" : "TextLabel",
+        "v" : 14,
+        "vertGravity" : 4,
+        "w" : 242,
+        "widthPolicy" : 0,
+        "x" : 69,
+        "y" : 270
+      } ],
+      "data" : {
+        "properties" : { }
+      },
+      "fields" : [ ],
+      "footerChildren" : [ {
+        "CSSClass" : "vantiqFooterButton",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderRadius" : 4,
+        "borderWidth" : 0,
+        "buttonBackgroundColor" : "platform",
+        "buttonLabel" : "OK",
+        "buttonLabelColor" : "platform",
+        "buttonLabelSize" : 14,
+        "buttonLabelStyle" : "bold",
+        "h" : 46,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 10,
+        "innerMargin" : 0,
+        "isArtificial" : false,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "label" : "",
+        "labelAlign" : "left",
+        "labelColor" : "default",
+        "labelFontSize" : 16,
+        "labelStyle" : "bold",
+        "name" : "FooterButton11",
+        "type" : "PIFooterButton",
+        "v" : 14,
+        "value" : 100,
+        "vertGravity" : 4,
+        "vertMargin" : 10,
+        "w" : 60,
+        "widthPolicy" : 0,
+        "x" : 170,
+        "y" : 5
+      } ],
+      "layoutType" : "mobile",
+      "responseTopic" : "/my/response/topic"
+    }
+  }
+}
